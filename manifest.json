@@ -2,24 +2,26 @@
     "manifest_version": 2,
     "name": "Translator",
     "version": "1.0",
-    "description": "Firefox translation Addon.",
-    "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/beastify",
+    "description": "Translation Addon.",
+    "homepage_url": "https://github.com/fhuanming/firefox-translator-extension",
     "icons": {
-        "48": "icons/beasts-48.png"
+        "32": "icons/text-32.png",
+        "64": "icons/text-64.png",
+        "128": "icons/text-128.png"
     },
     "permissions": [
         "activeTab",
-        "https://translate.google.com/"
+        "https://www.google.com/"
     ],
     "browser_action": {
-        "default_icon": "icons/beasts-32.png",
+        "default_icon": "icons/text-32.png",
         "default_title": "Translator",
         "default_popup": "popup/popup.html"
     },
     "content_scripts": [
         {
             "matches": [
-                "*://*.mozilla.org/*"
+                "<all_urls>"
             ],
             "js": [
                 "./content_scripts/translator.js"
